@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class TerningSpil {
@@ -13,14 +12,21 @@ public class TerningSpil {
         Terning tern = new Terning();
         Scanner Spil = new Scanner(System.in);
 
-        System.out.println("Tast 2 for at kaste terningen: ");
+        // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen //
 
-        if (Spil.nextInt()==2){
-            tern.kast();
-            System.out.println(tern.kast());
-        }
-        else {
-            System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
+            while(true){
+                System.out.println("Tast 2 for at kaste terningen: ");
+                if (Spil.nextInt() == 2) {
+                int k1 = tern.kast();
+                int k2 = tern.kast();
+                int sum = k1+k2;
+                System.out.print(k1 + " ");
+                System.out.println(k2);
+                System.out.println("Summen af kastet er: " + sum );
+            }
+            else {
+                System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
+            }
         }
 
 
