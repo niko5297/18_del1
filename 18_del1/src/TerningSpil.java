@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class TerningSpil {
-    public static void main (String[]args){
+    public static void main(String[] args) {
 
         System.out.println("Dette er et terning spil");
         System.out.println("Spillet er mellem 2 personer");
@@ -12,45 +12,50 @@ public class TerningSpil {
         Terning tern = new Terning();
         Scanner Spil = new Scanner(System.in);
         final int MAX = 40;
-        int sum=0, sum1 = 0, sum2 = 0, sum3 = 0;
+        int sum = 0, sum1 = 0, sum2 = 0, sum3 = 0;
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen //
 
-        // Spillet fungere som det skal, dog så kaster man terningen en ekstra gang hvis spiller nr.1 vinder //
+        // Spillet fungerer som det skal, dog vil den ikke spytte "Spiiler ... vandt" //
 
-            while(MAX>sum1 && MAX>sum2){
+        while (MAX > sum1 && MAX > sum3) {
+            if (MAX > sum1 && MAX > sum3) {
                 System.out.println("Tast 2 for at kaste terningen: ");
                 if (Spil.nextInt() == 2) {
-                int k1 = tern.kast();
-                int k2 = tern.kast();
-                sum = k1+k2+sum;
-                sum1 = sum;
-                System.out.print(k1 + " ");
-                System.out.println(k2);
-                System.out.println("Summen af kastet er: " + sum );
+                    int k1 = tern.kast();
+                    int k2 = tern.kast();
+                    sum = k1 + k2 + sum;
+                    sum1 = sum;
+                    System.out.print(k1 + " ");
+                    System.out.println(k2);
+                    System.out.println("Summen af kastet er: " + sum);
                     System.out.println("Spiller nr.1 har " + sum1 + " point");
-                    System.out.println("Spiller nr.2 kaster");
-                    System.out.println("Tast 2 for at kaste terningen: ");
-                    if (Spil.nextInt() == 2){
-                        int k3 = tern.kast();
-                        int k4 = tern.kast();
-                        sum2 = k3+k4+sum2;
-                        sum3 = sum2;
-                        System.out.print(k3 + " ");
-                        System.out.println(k4);
-                        System.out.println("Summen af kastet er: " + sum2);
-                        System.out.println("Spiller nr.2 har " + sum3 + " point");
+                    if (MAX > sum1 && MAX > sum3) {
+                        System.out.println("Spiller nr.2 kaster");
+                        System.out.println("Tast 2 for at kaste terningen: ");
+                        if (Spil.nextInt() == 2) {
+                            int k3 = tern.kast();
+                            int k4 = tern.kast();
+                            sum2 = k3 + k4 + sum2;
+                            sum3 = sum2;
+                            System.out.print(k3 + " ");
+                            System.out.println(k4);
+                            System.out.println("Summen af kastet er: " + sum2);
+                            System.out.println("Spiller nr.2 har " + sum3 + " point");
+                        }
                     }
+                }
+                else if (MAX < sum1 && MAX == sum1){
+                    System.out.println("Spiller nr.1 vandt");
+                }
+                else if (MAX < sum3 && MAX == sum3){
+                    System.out.println("Spiller nr.2 vandt");
+                }
 
-            }
-            else {
+            } else {
                 System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
             }
+
         }
-
-
-
-
-
     }
 }
