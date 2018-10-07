@@ -5,7 +5,6 @@ public class TerningSpil {
 
         System.out.println("Dette er et terning spil");
         System.out.println("Spillet er mellem 2 personer");
-        System.out.println("Spiller nr.1 kaster");
 
         // Scanner lavet, som giver brugeren mulighed for input //
 
@@ -16,10 +15,10 @@ public class TerningSpil {
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen //
 
-        // Spillet fungerer som det skal, dog vil den ikke spytte "Spiiler ... vandt" //
+        // Spillet fungerer som det skal //
 
         while (MAX > sum1 && MAX > sum3) {
-            if (MAX > sum1 && MAX > sum3) {
+                System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
                 if (Spil.nextInt() == 2) {
                     int k1 = tern.kast();
@@ -44,18 +43,16 @@ public class TerningSpil {
                             System.out.println("Spiller nr.2 har " + sum3 + " point");
                         }
                     }
-                }
-                else if (MAX < sum1 && MAX == sum1){
-                    System.out.println("Spiller nr.1 vandt");
-                }
-                else if (MAX < sum3 && MAX == sum3){
-                    System.out.println("Spiller nr.2 vandt");
-                }
-
-            } else {
+            }
+             else {
                 System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
             }
-
+        }
+         if (MAX <= sum1){
+            System.out.println("Spiller nr.1 vandt");
+        }
+         else if (MAX <= sum3){
+            System.out.println("Spiller nr.2 vandt");
         }
     }
 }
