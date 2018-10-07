@@ -27,9 +27,13 @@ public class TerningSpil {
                 int k2 = tern.kast();
                 sum = k1 + k2;
                 sum1 = sum + sum1;
-                System.out.print(k1 + " ");
-                System.out.println(k2);
-                System.out.println("Summen af kastet er: " + sum);
+                System.out.println(k1 + " " + k2);
+                if (k1 + k2 == 2){
+                    System.out.println("Spiller 1. mister alle sine point.");
+                    sum1=0;
+                } else {
+                    System.out.println("Summen af kastet er: " + sum);
+                }
                 System.out.println("Spiller nr.1 har " + sum1 + " point");
             } else {
                 System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
@@ -42,9 +46,13 @@ public class TerningSpil {
                     int k4 = tern.kast();
                     sum2 = k3 + k4;
                     sum3 = sum2 + sum3;
-                    System.out.print(k3 + " ");
-                    System.out.println(k4);
-                    System.out.println("Summen af kastet er: " + sum2);
+                    System.out.println(k3 + " " + k4);
+                    if (k3 + k4 == 2){
+                        System.out.println("Spiller 1. mister alle sine point.");
+                        sum1=0;
+                    } else {
+                        System.out.println("Summen af kastet er: " + sum2);
+                    }
                     System.out.println("Spiller nr.2 har " + sum3 + " point");
                 } else {
                     System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
