@@ -15,7 +15,7 @@ public class TerningSpil {
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen //
 
-        // Spillet fungerer som det skal //
+        // Spillet fungerer som det skal
 
         while (MAX > sum1 && MAX > sum3) {
                 System.out.println("Spiller nr.1 kaster");
@@ -23,8 +23,8 @@ public class TerningSpil {
                 if (Spil.nextInt() == 2) {
                     int k1 = tern.kast();
                     int k2 = tern.kast();
-                    sum = k1 + k2 + sum;
-                    sum1 = sum;
+                    sum = k1 + k2;
+                    sum1 = sum+sum1;
                     System.out.print(k1 + " ");
                     System.out.println(k2);
                     System.out.println("Summen af kastet er: " + sum);
@@ -35,8 +35,8 @@ public class TerningSpil {
                         if (Spil.nextInt() == 2) {
                             int k3 = tern.kast();
                             int k4 = tern.kast();
-                            sum2 = k3 + k4 + sum2;
-                            sum3 = sum2;
+                            sum2 = k3 + k4;
+                            sum3 = sum2+sum3;
                             System.out.print(k3 + " ");
                             System.out.println(k4);
                             System.out.println("Summen af kastet er: " + sum2);
