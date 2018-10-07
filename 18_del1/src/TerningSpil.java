@@ -5,7 +5,7 @@ public class TerningSpil {
 
         System.out.println("Dette er et terning spil");
         System.out.println("Spillet er mellem 2 personer");
-        System.out.println("Spiller nr.1 kaster");
+
 
         // Scanner lavet, som giver brugeren mulighed for input //
 
@@ -20,6 +20,8 @@ public class TerningSpil {
 
         while (MAX > sum1 && MAX > sum3) {
             if (MAX > sum1 && MAX > sum3) {
+                System.out.println(); //Adskiller forklaringen og selve spillet.
+                System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
                 if (Spil.nextInt() == 2) {
                     int k1 = tern.kast();
@@ -30,6 +32,7 @@ public class TerningSpil {
                     System.out.println(k2);
                     System.out.println("Summen af kastet er: " + sum);
                     System.out.println("Spiller nr.1 har " + sum1 + " point");
+                    System.out.println(); //Adskiller bare de 2 spillere for nemmere overblik.
                     if (MAX > sum1 && MAX > sum3) {
                         System.out.println("Spiller nr.2 kaster");
                         System.out.println("Tast 2 for at kaste terningen: ");
