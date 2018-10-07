@@ -26,11 +26,15 @@ public class TerningSpil {
                 if (Spil.nextInt() == 2) {
                     int k1 = tern.kast();
                     int k2 = tern.kast();
-                    sum = k1 + k2 + sum;
-                    sum1 = sum;
-                    System.out.print(k1 + " ");
-                    System.out.println(k2);
-                    System.out.println("Summen af kastet er: " + sum);
+                    sum = k1 + k2;
+                    sum1 += sum;
+                    System.out.println(k1 + " " + k2);
+                    if (k1 + k2 == 2){
+                        System.out.println("Spiller 1. mister alle sine point.");
+                        sum1=0;
+                    } else {
+                        System.out.println("Summen af kastet er: " + sum);
+                    }
                     System.out.println("Spiller nr.1 har " + sum1 + " point");
                     System.out.println(); //Adskiller bare de 2 spillere for nemmere overblik.
                     if (MAX > sum1 && MAX > sum3) {
@@ -39,11 +43,15 @@ public class TerningSpil {
                         if (Spil.nextInt() == 2) {
                             int k3 = tern.kast();
                             int k4 = tern.kast();
-                            sum2 = k3 + k4 + sum2;
-                            sum3 = sum2;
-                            System.out.print(k3 + " ");
-                            System.out.println(k4);
-                            System.out.println("Summen af kastet er: " + sum2);
+                            sum2 = k3 + k4;
+                            sum3 += sum2;
+                            System.out.println(k3 + " " + k4);
+                            if (k3 + k4 == 2){
+                                System.out.println("Spiller 2. mister alle sine point.");
+                                sum3=0;
+                            } else {
+                                System.out.println("Summen af kastet er: " + sum2);
+                            }
                             System.out.println("Spiller nr.2 har " + sum3 + " point");
                         }
                     }
