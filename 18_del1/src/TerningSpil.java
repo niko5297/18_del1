@@ -17,10 +17,9 @@ public class TerningSpil {
 
 
         while (MAX > sum1 && MAX > sum3) {
-            if (MAX > sum1 && MAX > sum3) { //hvorfor "&& sum1 >= 2"?
+                //her er ikke brug for en if statement, som siger det samme som løkken.
                 System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
-            }
             if (Spil.hasNextInt() && Spil.nextInt() == 2) {
                 int k1 = tern.kast();
                 int k2 = tern.kast();
@@ -37,7 +36,7 @@ public class TerningSpil {
             } else {
                 System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
             }
-            if (MAX > sum1 && MAX > sum3) {
+            if (MAX > sum1) {  //"&& MAX > sum3" behøves ikke, eftersom dette er forsikret af vores løkke, og er endu ikke blevet ændret inden i løkken.
                 System.out.println("Spiller nr.2 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
                 if (Spil.hasNextInt() && Spil.nextInt() == 2) {
@@ -60,7 +59,7 @@ public class TerningSpil {
         }
         if (MAX <= sum1) {
             System.out.println("Spiller nr.1 vandt");
-        } else if (MAX <= sum3) {
+        } else {  //if (MAX <= sum3) er igen ikke nødvendigt, eftersom løkken ikke stopper, før en af de 2 summe er over 40 (og hvis ikke det er sum1, MÅ det være sum3).
             System.out.println("Spiller nr.2 vandt");
         }
     }
