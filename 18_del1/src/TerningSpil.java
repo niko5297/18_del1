@@ -17,7 +17,6 @@ public class TerningSpil {
 
 
         while (MAX > sum1 && MAX > sum3) {
-                //her er ikke brug for en if statement, som siger det samme som løkken.
             System.out.println();
                 System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
