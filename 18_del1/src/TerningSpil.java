@@ -38,12 +38,12 @@ public class TerningSpil {
                 } else {
                     System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                 }
-                if(k1==k2 && MAX > sum1 && k1+k2!=2){
+                if(k1==k2 && MAX > sum1){
                     System.out.println();
                     System.out.println("Spiller 1. får et ekstra slag");
                 }
-            }while(k1 == k2 && MAX > sum1 && k1+k2!=2);
-            if (MAX > sum1) {  //"&& MAX > sum3" behøves ikke, eftersom dette er forsikret af vores løkke, og er endu ikke blevet ændret inden i løkken.
+            }while(k1 == k2 && MAX > sum1);
+            if (MAX > sum1) {
                 System.out.println();
                 System.out.println("Spiller nr.2 kaster");
                 do {
@@ -64,17 +64,17 @@ public class TerningSpil {
                     } else {
                         System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                     }
-                    if(k3==k4 && MAX > sum3 && k3+k4!=2){
+                    if(k3==k4 && MAX > sum3){
                         System.out.println();
                         System.out.println("Spiller 2. får et ekstra slag");
                     }
-                }while(k3==k4 && MAX > sum3 && k3+k4!=2);
+                }while(k3==k4 && MAX > sum3);
             }
         }
         if (MAX <= sum1) {
             System.out.println();
             System.out.println("Spiller nr.1 vandt");
-        } else {  //if (MAX <= sum3) er igen ikke nødvendigt, eftersom løkken ikke stopper, før en af de 2 summe er over 40 (og hvis ikke det er sum1, MÅ det være sum3).
+        } else {
             System.out.println();
             System.out.println("Spiller nr.2 vandt");
         }
