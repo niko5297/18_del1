@@ -22,7 +22,7 @@ public class TerningSpil {
                 System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
             }
-            if (Spil.nextInt() == 2) {
+            if (Spil.hasNextInt() && Spil.nextInt() == 2) {
                 int k1 = tern.kast();
                 int k2 = tern.kast();
                 sum = k1 + k2;
@@ -41,7 +41,7 @@ public class TerningSpil {
             if (MAX > sum1 && MAX > sum3) {
                 System.out.println("Spiller nr.2 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
-                if (Spil.nextInt() == 2) {
+                if (Spil.hasNextInt() && Spil.nextInt() == 2) {
                     int k3 = tern.kast();
                     int k4 = tern.kast();
                     sum2 = k3 + k4;
@@ -49,7 +49,7 @@ public class TerningSpil {
                     System.out.println(k3 + " " + k4);
                     if (k3 + k4 == 2){
                         System.out.println("Spiller 1. mister alle sine point.");
-                        sum1=0;
+                        sum3=0;
                     } else {
                         System.out.println("Summen af kastet er: " + sum2);
                     }
