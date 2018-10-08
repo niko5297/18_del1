@@ -42,7 +42,7 @@ public class TerningSpil {
                     System.out.println();
                     System.out.println("Spiller 1. får et ekstra slag");
                 }
-            }while(k1 == k2 && MAX > sum1);
+            }while(k1 == k2 && MAX > sum1); //tjekker for 2 ens
             if (MAX > sum1) {
                 System.out.println();
                 System.out.println("Spiller nr.2 kaster");
