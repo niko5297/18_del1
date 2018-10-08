@@ -15,10 +15,9 @@ public class TerningSpil {
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen
 
-        System.out.println("Spiller nr.1 kaster");
-        System.out.println("Tast 2 for at kaste terningen: ");
+
         while (MAX > sum1 && MAX > sum3) {
-            if (MAX > sum1 && MAX > sum3 && sum1 >= 2) {
+            if (MAX > sum1 && MAX > sum3) { //hvorfor "&& sum1 >= 2"?
                 System.out.println("Spiller nr.1 kaster");
                 System.out.println("Tast 2 for at kaste terningen: ");
             }
