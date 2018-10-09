@@ -14,9 +14,11 @@ public class TerningSpil {
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen
 
         //Instukser til Spillerne
-        System.out.println("Dette er et terning spil");
-        System.out.println("Spillet er mellem 2 personer");
+        System.out.println("Dette er et terning spil mellem 2 personer");
+        System.out.println("Hver runde lægges summen af ens slag til ens point");
+        System.out.println("Man mister alle sine point, hvis man slår 2*1, men slår man 2 ens, får man et ekstra slag");
         System.out.println("Den som først slår 2 ens, efter at have 40 point vinner");
+        System.out.println("Ellers kan man også vinde, hvis man slår 2 6'ere, 2 gange i træk");
 
         //Selve spillet
         while ((MAX > point1 && MAX > point2 || k1 != k2 && k3!=k4) && !to6_1 && !to6_2) {
@@ -40,7 +42,7 @@ public class TerningSpil {
                 } else {
                     System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                 }
-                //Tjekker for 4 6'ere inden for 2 kast (af samme spiller)
+                //Tjekker for 4 6'ere inden for 2 kast af samme spiller
                 if(gemk1 + gemk2 == 12 && k1 + k2 == gemk1 + gemk2){
                     to6_1=true;
                 }
