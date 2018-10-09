@@ -29,7 +29,7 @@ public class TerningSpil {
                     sum = k1 + k2;
                     sum1 = sum + sum1;
                     System.out.println(k1 + " " + k2);
-                    if (k1 + k2 == 2) {
+                    if (k1 + k2 == 2) { //tjekker om slaget var 2*1
                         System.out.println("Spiller 1. mister alle sine point.");
                         sum1 = 0;
                     } else {
@@ -39,11 +39,12 @@ public class TerningSpil {
                 } else {
                     System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                 }
-                if(k1==k2 && MAX > sum1){
+                if(k1==k2 && MAX > sum1){ //specialt udprint ved ekstra slag
                     System.out.println();
                     System.out.println("Spiller 1. får et ekstra slag");
                 }
-                if(ka+kb==12&&k1+k2==ka+kb){
+                //Tjekker for 2*2*6
+                if(ka + kb == 12 && k1 + k2 == ka + kb){
                     a=true;
                 }
                 ka=k1;
