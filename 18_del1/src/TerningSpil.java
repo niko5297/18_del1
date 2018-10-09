@@ -12,12 +12,13 @@ public class TerningSpil {
         Scanner Spil = new Scanner(System.in);
         final int MAX = 40;
         int sum = 0, sum1 = 0, sum2 = 0, sum3 = 0;
-        int k1=0,k2=0,k3=0,k4=0;
+        int k1=0,k2=0,k3=0,k4=0, ka=0, kb=0, kc=0, kd=0;
+        boolean a=false,b=false;
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen
 
 
-        while (MAX > sum1 && MAX > sum3 || k1 != k2 && k3!=k4) {
+        while (MAX > sum1 && MAX > sum3 && !a && !b || k1 != k2 && k3!=k4 && !a && !b) {
             System.out.println();
             System.out.println("Spiller nr.1 kaster");
             do {
@@ -42,8 +43,13 @@ public class TerningSpil {
                     System.out.println();
                     System.out.println("Spiller 1. får et ekstra slag");
                 }
-            }while(k1 == k2 && MAX > sum1); //tjekker for 2 ens
-            if (MAX > sum1 || k1!=k2) {
+                if(ka+kb==12&&k1+k2==ka+kb){
+                    a=true;
+                }
+                ka=k1;
+                kb=k2;
+            }while(k1 == k2 && MAX > sum1 && !a); //tjekker for 2 ens
+            if (MAX > sum1 || k1!=k2)  {
                 System.out.println();
                 System.out.println("Spiller nr.2 kaster");
                 do {
@@ -68,10 +74,15 @@ public class TerningSpil {
                         System.out.println();
                         System.out.println("Spiller 2. får et ekstra slag");
                     }
-                }while(k3==k4 && MAX > sum3);
+                    if(kc + kd == 12 && k3 + k4 == kc + kd){
+                        b=true;
+                    }
+                    kc=k3;
+                    kd=k4;
+                }while(k3==k4 && MAX > sum3 && !b);
             }
         }
-        if (MAX <= sum1 && k1==k2) {
+        if (MAX <= sum1 && k1==k2 || a) {
             System.out.println();
             System.out.println("Spiller nr.1 vandt");
         } else {
