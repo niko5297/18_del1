@@ -8,48 +8,81 @@ public class TerningTest {
 
     @Test
     public void kast() {
+
         for (int i = 0; i < 1000; i++) {
             int tal = T.kast();
             assertTrue(tal > 0 && tal < 7);
         }
+        int SammeSum=0;
+        int a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i_1=0,j=0,k=0;
+        for (int i=0; i<12000; i++){
+            int kast_1=T.kast();
+            int kast_2=T.kast();
+            int tal = kast_1+kast_2;
 
-    }
-}
-  /*  @Test
-    public void rollMultiple() {
-        int a=0,b=0,c=0,d=0,e=0,f=0;
-        for (int i=0; i<60000; i++){
-            int tal = D.roll();
-            if (tal==1){
-                a++;
+            if(kast_1==kast_2){
+                ++SammeSum;
             }
             if (tal==2){
-                b++;
+                a++;
             }
             if (tal==3){
-                c++;
+                b++;
             }
             if (tal==4){
-                d++;
+                c++;
             }
             if (tal==5){
-                e++;
+                d++;
             }
             if (tal==6){
+                e++;
+            }
+            if (tal==7){
                 f++;
             }
+            if (tal==8){
+                g++;
+            }
+            if (tal==9){
+                h++;
+            }
+            if (tal==10){
+                i_1++;
+            }
+            if (tal==11){
+                j++;
+            }
+            if (tal==12){
+                k++;
+            }
+
         }
-        System.out.println("a = " +a);
-        System.out.println("b = " +b);
-        System.out.println("c = " +c);
-        System.out.println("d = " +d);
-        System.out.println("e = " +e);
-        System.out.println("f = " +f);
-        assertTrue(a<9600 && a>10400);
-        assertTrue(b<9600 && b>10400);
-        assertTrue(c<9600 && c>10400);
-        assertTrue(d<9600 && d>10400);
-        assertTrue(e<9600 && e>10400);
-        assertTrue(f<9600 && f>10400);
+        System.out.println("2 Øjne = " +a);
+        System.out.println("3 Øjne = " +b);
+        System.out.println("4 Øjne = " +c);
+        System.out.println("5 Øjne = " +d);
+        System.out.println("6 Øjne = " +e);
+        System.out.println("7 Øjne = " +f);
+        System.out.println("8 Øjne = " +g);
+        System.out.println("9 Øjne = " +h);
+        System.out.println("10 Øjne = " +i_1);
+        System.out.println("11 Øjne = " +j);
+        System.out.println("12 Øjne = " +k);
+        System.out.println("Ens antal øjne = " +SammeSum);
+        /*
+        assertTrue(a<950 && a>1050);
+        assertTrue(b<950 && b>1050);
+        assertTrue(c<950 && c>1050);
+        assertTrue(d<950 && d>1050);
+        assertTrue(e<950 && e>1050);
+        assertTrue(f<950 && f>1050);
+        assertTrue(g<950 && g>1050);
+        assertTrue(h<950 && h>1050);
+        assertTrue(i_1<950 && i_1>1050);
+        assertTrue(j<950 && j>1050);
+        assertTrue(k<950 && k>1050);
+
+        */
     }
-*/
+    }
