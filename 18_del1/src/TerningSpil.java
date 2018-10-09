@@ -39,18 +39,18 @@ public class TerningSpil {
                 } else {
                     System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                 }
-                if(k1==k2 && MAX > sum1){ //specialt udprint ved ekstra slag
-                    System.out.println();
-                    System.out.println("Spiller 1. får et ekstra slag");
-                }
                 //Tjekker for 2*2*6
                 if(ka + kb == 12 && k1 + k2 == ka + kb){
                     a=true;
                 }
                 ka=k1;
                 kb=k2;
+                if(k1==k2 && MAX > sum1 && !a){ //specialt udprint ved ekstra slag
+                    System.out.println();
+                    System.out.println("Spiller 1. får et ekstra slag");
+                }
             }while(k1 == k2 && MAX > sum1 && !a); //tjekker for 2 ens
-            if (MAX > sum1 || k1!=k2)  {
+            if (MAX > sum1 && !a || k1!=k2 && !a)  {
                 System.out.println();
                 System.out.println("Spiller nr.2 kaster");
                 do {
@@ -71,15 +71,15 @@ public class TerningSpil {
                     } else {
                         System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                     }
-                    if(k3==k4 && MAX > sum3){
-                        System.out.println();
-                        System.out.println("Spiller 2. får et ekstra slag");
-                    }
                     if(kc + kd == 12 && k3 + k4 == kc + kd){
                         b=true;
                     }
                     kc=k3;
                     kd=k4;
+                    if(k3==k4 && MAX > sum3 && !b){
+                        System.out.println();
+                        System.out.println("Spiller 2. får et ekstra slag");
+                    }
                 }while(k3==k4 && MAX > sum3 && !b);
             }
         }
