@@ -7,8 +7,8 @@ public class TerningSpil {
         Terning tern = new Terning();
         Scanner Spil = new Scanner(System.in);
         final int MAX = 40;
-        int kastsum1, point1 = 0, k1 = 0, k2 = 0, gemk1 = 0, gemk2 = 0; //k = kast
-        int kastsum2, point2 = 0, k3 = 0, k4 = 0, gemk3 = 0, gemk4 = 0; //gemk = forrige kast
+        int kastsum1 = 0, point1 = 0, k1 = 0, k2 = 0, gemk1 = 0, gemk2 = 0; //k = kast
+        int kastsum2 = 0, point2 = 0, k3 = 0, k4 = 0, gemk3 = 0, gemk4 = 0; //gemk = forrige kast
         boolean to6_1 = false, to6_2 = false; //2 6'ere i træk
         boolean forkert;
 
@@ -22,7 +22,7 @@ public class TerningSpil {
         System.out.println("Ellers kan man også vinde, hvis man slår 2 6'ere, 2 gange i træk");
 
         //Selve spillet
-        while ((MAX > point1 && MAX > point2 || k1 != k2 && k3 != k4) && !to6_1 && !to6_2) {
+        while ((MAX > point1 && MAX > point2 || k1 != k2 && k3 != k4 || (point1 - (kastsum1)) <= MAX && (point2 - (kastsum2)) <= MAX) && !to6_1 && !to6_2) {
             System.out.println();
             System.out.println("Spiller nr.1 kaster");
             do {
@@ -40,13 +40,16 @@ public class TerningSpil {
                     } else {
                         System.out.println("Summen af kastet er: " + kastsum1);
                     }
+
                     System.out.println("Spiller nr.1 har " + point1 + " point");
+
                     //Tjekker for 4 6'ere inden for 2 kast af samme spiller
                     if (gemk1 + gemk2 == 12 && k1 + k2 == gemk1 + gemk2) {
                         to6_1 = true;
                     }
                     gemk1 = k1;
                     gemk2 = k2;
+
                     if (k1 == k2 && MAX > point1 && !to6_1) { //specialt udprint ved ekstra slag
                         System.out.println();
                         System.out.println("Spiller 1. får et ekstra slag");
@@ -76,12 +79,15 @@ public class TerningSpil {
                         } else {
                             System.out.println("Summen af kastet er: " + kastsum2);
                         }
+
                         System.out.println("Spiller nr.2 har " + point2 + " point");
+
                         if (gemk3 + gemk4 == 12 && k3 + k4 == gemk3 + gemk4) {
                             to6_2 = true;
                         }
                         gemk3 = k3;
                         gemk4 = k4;
+
                         if (k3 == k4 && MAX > point2 && !to6_2) {
                             System.out.println();
                             System.out.println("Spiller 2. får et ekstra slag");
@@ -93,6 +99,7 @@ public class TerningSpil {
                 } while (k3 == k4 && MAX > point2 && !to6_2 || forkert);
             }
         }
+        Spil.close();
         //spillet er slut og vinderen findes.
         if (MAX <= point1 && k1 == k2 || to6_1) {
             System.out.println();
