@@ -22,7 +22,7 @@ public class TerningSpil {
         System.out.println("Ellers kan man også vinde, hvis man slår 2 6'ere, 2 gange i træk");
 
         //Selve spillet
-        while ((MAX > point1 && MAX > point2 || k1 != k2 && k3 != k4 || (point1 - (kastsum1)) <= MAX && (point2 - (kastsum2)) <= MAX) && !to6_1 && !to6_2) {
+        while ((k1 != k2 && k3 != k4 || (point1 - (kastsum1)) <= MAX && (point2 - (kastsum2)) <= MAX) && !to6_1 && !to6_2) {
             System.out.println();
             System.out.println("Spiller nr.1 kaster");
             do {
