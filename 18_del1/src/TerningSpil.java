@@ -7,10 +7,10 @@ public class TerningSpil {
         Terning tern = new Terning();
         Scanner Spil = new Scanner(System.in);
         final int MAX = 40;
-        int kastsum1 = 0, point1 = 0, k1 = 0, k2 = 0, gemk1 = 0, gemk2 = 0; //k = kast
-        int kastsum2 = 0, point2 = 0, k3 = 0, k4 = 0, gemk3 = 0, gemk4 = 0; //gemk = forrige kast
+        int kastsum1 = 0, point1 = 0, k1 = 0, k2 = 0, gemk1 = 0, gemk2 = 0; //Spiller 1, k = kast
+        int kastsum2 = 0, point2 = 0, k3 = 0, k4 = 0, gemk3 = 0, gemk4 = 0; //Spiller 2, gemk = forrige kast
         boolean to6_1 = false, to6_2 = false; //2 6'ere i træk
-        boolean forkert;
+        boolean forkert; //fejlinput
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen
 
@@ -22,7 +22,7 @@ public class TerningSpil {
         System.out.println("Ellers kan man også vinde, hvis man slår 2 6'ere, 2 gange i træk");
 
         //Selve spillet
-        while ((k1 != k2 && k3 != k4 || (point1 - (kastsum1)) <= MAX && (point2 - (kastsum2)) <= MAX) && !to6_1 && !to6_2) {
+        while ((k1 != k2 && k3 != k4 || (point1 - (kastsum1)) < MAX && (point2 - (kastsum2)) < MAX) && !to6_1 && !to6_2) {
             System.out.println();
             System.out.println("Spiller nr.1 kaster");
             do {
