@@ -70,19 +70,5 @@ public class TerningTest {
         System.out.println("11 Øjne = " +j);
         System.out.println("12 Øjne = " +k);
         System.out.println("Ens antal øjne = " +SammeSum);
-        /*
-        assertTrue(a<950 && a>1050);
-        assertTrue(b<950 && b>1050);
-        assertTrue(c<950 && c>1050);
-        assertTrue(d<950 && d>1050);
-        assertTrue(e<950 && e>1050);
-        assertTrue(f<950 && f>1050);
-        assertTrue(g<950 && g>1050);
-        assertTrue(h<950 && h>1050);
-        assertTrue(i_1<950 && i_1>1050);
-        assertTrue(j<950 && j>1050);
-        assertTrue(k<950 && k>1050);
-
-        */
     }
     }
