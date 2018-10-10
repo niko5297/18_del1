@@ -10,6 +10,7 @@ public class TerningSpil {
         int kastsum1, point1=0, k1=0, k2=0, gemk1=0, gemk2=0; //k = kast
         int kastsum2, point2=0, k3=0, k4=0, gemk3=0, gemk4=0; //gemk = forrige kast
         boolean to6_1=false, to6_2=false; //2 6'ere i træk
+        boolean tur1=false, tur2=true;
 
         // Hvis spiller 1 taster 2, så vil programmet kaste terningen, og lægge de to slået værdier sammen
 
@@ -22,40 +23,44 @@ public class TerningSpil {
 
         //Selve spillet
         while ((MAX > point1 && MAX > point2 || k1 != k2 && k3!=k4) && !to6_1 && !to6_2) {
-            System.out.println();
-            System.out.println("Spiller nr.1 kaster");
-            do {
-                System.out.println("Tast 2 for at kaste terningen: ");
-                 k1 = tern.kast();
-                 k2 = tern.kast();
-                if (Spil.hasNextInt() && Spil.nextInt() == 2) {  //tjekker for korrekt input
-                    kastsum1 = k1 + k2;
-                    point1 += kastsum1;
-                    System.out.println(k1 + " " + k2);
-                    if (k1 + k2 == 2) { //tjekker om slaget var 2 ettere
-                        System.out.println("Spiller 1. mister alle sine point.");
-                        point1 = 0;
+            if(tur2) {
+                tur1 = false;
+                System.out.println();
+                System.out.println("Spiller nr.1 kaster");
+                do {
+                    System.out.println("Tast 2 for at kaste terningen: ");
+                    k1 = tern.kast();
+                    k2 = tern.kast();
+                    if (Spil.hasNextInt() && Spil.nextInt() == 2) {  //tjekker for korrekt input
+                        kastsum1 = k1 + k2;
+                        point1 += kastsum1;
+                        System.out.println(k1 + " " + k2);
+                        if (k1 + k2 == 2) { //tjekker om slaget var 2 ettere
+                            System.out.println("Spiller 1. mister alle sine point.");
+                            point1 = 0;
+                        } else {
+                            System.out.println("Summen af kastet er: " + kastsum1);
+                        }
+                        System.out.println("Spiller nr.1 har " + point1 + " point");
+                        tur1 = true;
                     } else {
-                        System.out.println("Summen af kastet er: " + kastsum1);
+                        System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                     }
-                    System.out.println("Spiller nr.1 har " + point1 + " point");
-                } else {
-                    System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
-                }
-                //Tjekker for 4 6'ere inden for 2 kast af samme spiller
-                if(gemk1 + gemk2 == 12 && k1 + k2 == gemk1 + gemk2){
-                    to6_1=true;
-                }
-                gemk1=k1;
-                gemk2=k2;
-                if(k1==k2 && MAX > point1 && !to6_1){ //specialt udprint ved ekstra slag
-                    System.out.println();
-                    System.out.println("Spiller 1. får et ekstra slag");
-                }
-            }while(k1 == k2 && MAX > point1 && !to6_1); //tjekker for 2 ens
-
+                    //Tjekker for 4 6'ere inden for 2 kast af samme spiller
+                    if (gemk1 + gemk2 == 12 && k1 + k2 == gemk1 + gemk2) {
+                        to6_1 = true;
+                    }
+                    gemk1 = k1;
+                    gemk2 = k2;
+                    if (k1 == k2 && MAX > point1 && !to6_1) { //specialt udprint ved ekstra slag
+                        System.out.println();
+                        System.out.println("Spiller 1. får et ekstra slag");
+                    }
+                } while (k1 == k2 && MAX > point1 && !to6_1); //tjekker for 2 ens
+            }
             //Hvis spiller 1 ikke har vundet, er det spiller 2's tur.
-            if ((MAX > point1 || k1!=k2) && !to6_1)  {
+            if ((MAX > point1 || k1!=k2) && !to6_1 && tur1)  {
+                tur2=false;
                 System.out.println();
                 System.out.println("Spiller nr.2 kaster");
                 do {
@@ -73,6 +78,7 @@ public class TerningSpil {
                             System.out.println("Summen af kastet er: " + kastsum2);
                         }
                         System.out.println("Spiller nr.2 har " + point2 + " point");
+                        tur2=true;
                     } else {
                         System.out.println("Forkert input... Tast 2 for at kaste terningen: ");
                     }
