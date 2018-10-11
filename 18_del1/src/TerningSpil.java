@@ -31,7 +31,7 @@ public class TerningSpil {
                 k1 = tern.kast();
                 k2 = tern.kast();
                 String kast = Spil.nextLine();
-                if (kast.charAt(0)=='2') {  //tjekker for korrekt input
+                if (kast.charAt(0) == '2') {  //tjekker for korrekt input
                     kastsum1 = k1 + k2;
                     point1 += kastsum1;
                     System.out.println(k1 + " " + k2);
@@ -71,7 +71,7 @@ public class TerningSpil {
                     k3 = tern.kast();
                     k4 = tern.kast();
                     String kast2 = Spil.nextLine();
-                    if (kast2.charAt(0)=='2') {
+                    if (kast2.charAt(0) == '2') {
                         kastsum2 = k3 + k4;
                         point2 += kastsum2;
                         System.out.println(k3 + " " + k4);
@@ -103,7 +103,7 @@ public class TerningSpil {
         }
         Spil.close();
         //spillet er slut og vinderen findes.
-        if (MAX <= point1-kastsum1 && k1 == k2 || to6_1) {
+        if (MAX <= point1 - kastsum1 && k1 == k2 || to6_1) {
             System.out.println();
             System.out.println("Spiller nr.1 vandt");
         } else {
