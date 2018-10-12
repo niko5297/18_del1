@@ -31,7 +31,7 @@ public class TerningSpil {
                 k1 = tern.kast();
                 k2 = tern.kast();
                 String kast = Spil.nextLine();
-                if (kast.charAt(0)=='2') {  //tjekker for korrekt input
+                if (kast.equals("2")) {  //tjekker for korrekt input
                     kastsum1 = k1 + k2;
                     point1 += kastsum1;
                     System.out.println(k1 + " " + k2);
@@ -71,7 +71,7 @@ public class TerningSpil {
                     k3 = tern.kast();
                     k4 = tern.kast();
                     String kast2 = Spil.nextLine();
-                    if (kast2.charAt(0)=='2') {
+                    if (kast2.equals("2")) {
                         kastsum2 = k3 + k4;
                         point2 += kastsum2;
                         System.out.println(k3 + " " + k4);
